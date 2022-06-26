@@ -1,0 +1,27 @@
+ALGORITHM sentence
+VAR
+    sentence :STRING;
+    chars :INTEGER:=0;
+    words :integer:= 1;
+    vowels :integer:=0;
+    
+BEGIN
+    Write("write the sentence:");
+    Read(sentence);
+
+    FOR i FROM 1 TO length(sentence) STEP step  DO
+        IF (sentence[i] = " ") THEN
+            words:= words+1;
+        END_IF
+        IF (sentence[i] <> " " and sentence[i] <> "." ) THEN
+            chars := chars + 1;
+        END_IF
+        IF (sentence[i] = "a" or  sentence[i] = "e" or sentence[i] = "i" or sentence[i] = "o" or sentence[i] = "u" ) THEN
+            vowels := vowels + 1;
+        END_IF
+
+    END_FOR
+    Write(chars);
+    Write(words);
+    Write(vowels);
+END
